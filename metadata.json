@@ -1,7 +1,0 @@
-{
-  "name": "Copy of SCPC Plomberie & Chauffage",
-  "description": "Site web officiel de SCPC (Steve Chupe Plomberie et Chauffage) offrant des services de plomberie, chauffage et rénovation.",
-  "requestFramePermissions": [
-    "microphone"
-  ]
-}
