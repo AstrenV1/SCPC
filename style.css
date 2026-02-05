@@ -151,10 +151,22 @@ nav ul li a:hover, nav ul li a.active {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=1200&q=80'); 
     background-size: cover; background-position: center; 
 }
-.chauffage-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x600?text=Chauffage'); background-size: cover; }
-.renovation-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x600?text=Renovation'); background-size: cover; }
-.entretien-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x600?text=Entretien'); background-size: cover; }
-.contact-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x600?text=Contact'); background-size: cover; }
+.chauffage-bg { 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=1200&q=80'); 
+    background-size: cover; 
+}
+.renovation-bg { 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'); 
+    background-size: cover; 
+}
+.entretien-bg { 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80'); 
+    background-size: cover; 
+}
+.contact-bg { 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=1200&q=80'); 
+    background-size: cover; 
+}
 
 
 /* =========================================
@@ -287,15 +299,30 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 /* =========================================
-   6. GRILLE SERVICES (Index) & GALERIE
+   6. GRILLE SERVICES (Index) - CORRIGÉ
    ========================================= */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Force 4 colonnes sur les grands écrans */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Gestion de la symétrie : Passage en 2x2 sur tablette */
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Passage en 1 colonne sur mobile */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Cartes cliquables */
@@ -347,13 +374,15 @@ a.service-card:hover::before {
     color: var(--light-blue);
 }
 
-/* Images cartes */
+/* Images cartes (Index) */
 .plomberie { background-image: url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=600&q=80'); }
 .chauffage { background-image: url('https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=600&q=80'); }
 .renovation { background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'); }
 .entretien { background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'); }
 
-/* Galerie Photos */
+/* =========================================
+   7. GALERIE PHOTOS
+   ========================================= */
 .gallery {
     background-color: #000;
     padding: 20px 0;
@@ -379,7 +408,7 @@ a.service-card:hover::before {
 }
 
 /* =========================================
-   7. CONTACT & FOOTER
+   8. CONTACT & FOOTER
    ========================================= */
 .contact-section {
     background-color: #0d0d0d;
@@ -431,10 +460,10 @@ footer {
 }
 
 /* =========================================
-   8. RESPONSIVE (MOBILE)
+   9. RESPONSIVE (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
-    nav ul { display: none; } /* Pour l'instant on cache le menu sur mobile */
+    nav ul { display: none; } /* Menu caché sur mobile */
     .hero-content h1 { font-size: 2.2rem; }
     .hero { height: 60vh; }
     .container-flex { flex-direction: column; }
