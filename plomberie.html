@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plomberie - SCPC Steve Chupe</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">SCPC</div>
+            <div class="logo">
+                <a href="index.html">SCPC</a>
+            </div>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="plomberie.html" class="active">Plomberie</a></li>
-                <li><a href="index.html#services">Chauffage</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="chauffage.html">Chauffage</a></li>
+                <li><a href="renovation.html">Rénovation</a></li>
+                <li><a href="entretien.html">Entretien</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -24,52 +29,61 @@
         <div class="hero-content">
             <h1>PLOMBERIE</h1>
             <p>À LE PALLET ET SES ALENTOURS</p>
-            <a href="#contact-footer" class="btn-outline">CONTACTEZ-NOUS</a>
+            <a href="contact.html" class="btn-outline">CONTACTEZ-NOUS</a>
         </div>
     </section>
 
-    <section class="details-section">
+    <section class="details-section" style="background-color: #1a1a1a; padding: 60px 0;">
         <div class="container-flex">
             <div class="text-content">
-                <h2>REMPLACEMENT DE VOTRE TUYAUTERIE</h2>
-                <p>Vous recherchez un plombier de confiance pour assurer la <strong>rénovation</strong> ou <strong>l'installation</strong> de vos éléments de plomberie ? <strong>SCPC (Steve Chupe Plomberie et Chauffage)</strong> est l'entreprise qu'il vous faut. Je vous accompagne dans l'installation de tous vos systèmes de plomberie.</p>
+                <h2 style="color: #fff; text-transform: uppercase;">REMPLACEMENT DE VOTRE TUYAUTERIE</h2>
+                <p style="color: #ccc; margin-bottom: 20px;">
+                    Vous recherchez un plombier de confiance pour assurer la <strong style="color: #48cae4;">rénovation</strong> ou <strong style="color: #48cae4;">l'installation</strong> de vos éléments de plomberie ? 
+                    <strong>SCPC (Steve Chupe Plomberie et Chauffage)</strong> est l'entreprise qu'il vous faut. Je vous accompagne dans l'installation de tous vos <strong style="color: #48cae4;">systèmes de plomberie</strong>.
+                </p>
                 
-                <h3>Plombier compétent à votre service !</h3>
+                <h3 style="color: #fff; margin-bottom: 15px;">Plombier compétent à votre service !</h3>
                 <ul class="services-list">
                     <li>Installation des réseaux de traitement et de distribution d'eau froide</li>
                     <li>Installation de production et de distribution d'eau chaude</li>
                     <li>Installation, entretien et réparation de chauffe-eau</li>
-                    <li>Pose et raccordement d'éléments sanitaires (lavabo, WC, évier, baignoire, lave-mains, broyeur d'évier)</li>
+                    <li>Pose et raccordement d'éléments sanitaires (lavabo, WC, évier, baignoire)</li>
                     <li>Pose et raccordement de robinetterie</li>
                     <li>Raccordement des appareils sanitaires aux réseaux d'eaux usées</li>
-                    <li>Entretien et réparation des installations existantes (débouchage de canalisation, recherches de fuites)</li>
+                    <li>Entretien et réparation des installations existantes (débouchage, fuites)</li>
                 </ul>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #aaa;">
+                    Je propose également la pose de systèmes de <span style="color: #48cae4;">chauffage</span>, <span style="color: #48cae4;">d'adoucisseur</span> d'eau et des créations de salle de bain.
+                </p>
             </div>
+            
             <div class="image-main">
-                <img src="https://via.placeholder.com/600x600" alt="Travaux de plomberie">
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80" alt="Chantier de plomberie">
             </div>
         </div>
     </section>
 
     <section class="gallery">
         <div class="gallery-grid">
-            <img src="https://via.placeholder.com/300x400" alt="Douche italienne">
-            <img src="https://via.placeholder.com/300x400" alt="Lavabo design">
-            <img src="https://via.placeholder.com/300x400" alt="Salle de bain moderne">
-            <img src="https://via.placeholder.com/300x400" alt="WC suspendu">
-            <img src="https://via.placeholder.com/300x400" alt="Meuble vasque">
+            <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=400&q=80" alt="Douche italienne">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="Salle de bain moderne">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=400&q=80" alt="Robinetterie design">
+            <img src="https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=400&q=80" alt="Installation sanitaire">
         </div>
     </section>
 
     <section id="contact-footer" class="cta-bottom">
         <div class="container">
             <h2>FAITES APPEL À VOTRE PLOMBIER CHAUFFAGISTE À LE PALLET ET SES ALENTOURS !</h2>
-            <a href="tel:0662245531" class="btn-outline">CONTACTEZ-NOUS</a>
+            <div style="margin-top: 30px;">
+                <a href="contact.html" class="btn-primary">CONTACTEZ-NOUS</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>©SCPC - 2026 - Tous droits réservés - Mentions légales</p>
+        <p>© 2026 SCPC - Steve Chupe Plomberie et Chauffage. Tous droits réservés.</p>
     </footer>
 
 </body>
