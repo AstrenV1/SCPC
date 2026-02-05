@@ -375,10 +375,10 @@ a.service-card:hover::before {
 }
 
 /* Images cartes (Index) */
-.plomberie { background-image: url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=600&q=80'); }
-.chauffage { background-image: url('https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=600&q=80'); }
-.renovation { background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'); }
-.entretien { background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'); }
+.plomberie { background-image: url('https://img.freepik.com/photos-gratuite/services-reparation-plomberie_181624-27146.jpg?semt=ais_hybrid&w=740&q=80'); }
+.chauffage { background-image: url('https://www.cti-concept.fr/contents/media/installation-chauffage-comfobox.jpg'); }
+.renovation { background-image: url('https://cdn.prod.website-files.com/64a85451f3cdf38ec7b60853/64c18ebe374da681f799bc79_Renover-une-salle-de-bain.jpg'); }
+.entretien { background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80'); }
 
 /* =========================================
    7. GALERIE PHOTOS
@@ -470,4 +470,5 @@ footer {
     .contact-info { flex-direction: column; }
     .btn-outline { display: block; margin-left: 0; margin-top: 10px; }
 }
+
 
