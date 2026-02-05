@@ -148,15 +148,15 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Images de fond spécifiques */
 .plomberie-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=1200&q=80'); 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.freepik.com/photos-gratuite/services-reparation-plomberie_181624-27146.jpg?semt=ais_hybrid&w=740&q=80'); 
     background-size: cover; background-position: center; 
 }
 .chauffage-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=1200&q=80'); 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.cti-concept.fr/contents/media/installation-chauffage-comfobox.jpg'); 
     background-size: cover; 
 }
 .renovation-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'); 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://cdn.prod.website-files.com/64a85451f3cdf38ec7b60853/64c18ebe374da681f799bc79_Renover-une-salle-de-bain.jpg'); 
     background-size: cover; 
 }
 .entretien-bg { 
@@ -164,7 +164,7 @@ nav ul li a:hover, nav ul li a.active {
     background-size: cover; 
 }
 .contact-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=1200&q=80'); 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://palluetfreres.fr/wp-content/uploads/2022/12/entretien_chaudiere.jpg'); 
     background-size: cover; 
 }
 
@@ -470,3 +470,4 @@ footer {
     .contact-info { flex-direction: column; }
     .btn-outline { display: block; margin-left: 0; margin-top: 10px; }
 }
+
