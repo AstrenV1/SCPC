@@ -1,61 +1,260 @@
 /* =========================================
-   CORRECTION DES COULEURS (LIENS VIOLETS)
+   1. VARIABLES & RESET
    ========================================= */
-/* Ceci force tous les liens dans les cartes de services à rester blancs */
-.services-grid a, 
-.services-grid a:visited,
-.contact-section a,
-.contact-section a:visited {
-    color: white;
+:root {
+    --primary-blue: #0077b6;
+    --light-blue: #48cae4;
+    --dark-bg: #111;
+    --grey-bg: #1a1a1a;
+    --accent-red: #e63946;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: var(--dark-bg);
+}
+
+a {
     text-decoration: none;
+    color: inherit;
+}
+
+/* Force la couleur des liens pour éviter le violet */
+a:visited {
+    color: inherit;
 }
 
 /* =========================================
-   SECTION SERVICES (Plus "Classy")
+   2. NAVIGATION (HEADER) - CORRIGÉ
+   ========================================= */
+header {
+    background: rgba(0, 0, 0, 0.95);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo a {
+    color: var(--light-blue) !important; /* Force la couleur du logo */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #fff !important; /* Force le blanc pour le menu */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    padding-bottom: 5px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--light-blue) !important;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+/* =========================================
+   3. HERO SECTIONS (Accueil & Sous-pages)
+   ========================================= */
+.hero, .hero-sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    /* Couleur de fond de secours si l'image ne charge pas */
+    background-color: #222; 
+}
+
+.hero {
+    height: 90vh; /* Prend presque tout l'écran */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effet parallax sympa */
+}
+
+.hero-sub {
+    height: 50vh;
+    padding-top: 80px;
+}
+
+.hero-content {
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--light-blue);
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Backgrounds Spécifiques */
+.plomberie-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600?text=Plomberie'); background-size: cover; background-position: center; }
+.chauffage-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600?text=Chauffage'); background-size: cover; background-position: center; }
+.renovation-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600?text=Renovation'); background-size: cover; background-position: center; }
+.entretien-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600?text=Entretien'); background-size: cover; background-position: center; }
+.contact-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600?text=Contact'); background-size: cover; background-position: center; }
+
+/* =========================================
+   4. BOUTONS
+   ========================================= */
+.btn-primary, .btn-outline, .btn-submit, .btn-submit-large {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: #023e8a;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+    color: #fff !important;
+    background: transparent;
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: var(--dark-bg) !important;
+}
+
+/* =========================================
+   5. SECTIONS GÉNÉRALES
+   ========================================= */
+.about {
+    background: #fff;
+    color: #333;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* =========================================
+   6. GRILLE DE SERVICES (Index)
    ========================================= */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.service-card {
-    position: relative;
-    height: 350px; /* Plus haut pour plus d'élégance */
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* Texte en bas comme sur les sites modernes */
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px; /* Coins légèrement arrondis */
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Ombre portée */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* Correction importante : liens sur les cartes */
+.services-grid a {
+    display: block;
+    height: 100%;
+    color: white !important; /* Force le blanc */
 }
 
-/* Ajoute un filtre sombre permanent sur l'image pour que le texte ressorte */
+.service-card {
+    position: relative;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
 .service-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
     transition: background 0.4s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px); /* L'image monte légèrement */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    transform: translateY(-5px);
 }
 
-/* Éclaircit l'image au survol */
 .service-card:hover::before {
-    background: linear-gradient(to top, rgba(0,75,120,0.8), rgba(0,0,0,0.1)); /* Touche de bleu SCPC */
+    background: linear-gradient(to top, rgba(0, 119, 182, 0.8), rgba(0,0,0,0.1));
 }
 
-/* Le conteneur du texte */
 .card-overlay {
     position: relative;
     z-index: 2;
@@ -67,61 +266,52 @@
 .service-card h3 {
     font-size: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     margin-bottom: 10px;
-    font-weight: 600;
-    border: none; /* On retire la bordure précédente */
-    background: transparent;
-    padding: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* Le texte "Voir les détails" */
 .card-overlay span {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #48cae4; /* Bleu clair */
-    opacity: 0.8;
-    transition: 0.3s;
-    border-bottom: 1px solid transparent;
+    color: var(--light-blue);
+    opacity: 0.9;
 }
 
-.service-card:hover .card-overlay span {
-    opacity: 1;
-    border-bottom: 1px solid #48cae4; /* Soulignement élégant au survol */
-}
-
-/* Images de fond (Assurez-vous que ces liens fonctionnent ou mettez vos images) */
+/* Images pour les cartes */
 .plomberie { background-image: url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=600&q=80'); }
 .chauffage { background-image: url('https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=600&q=80'); }
 .renovation { background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'); }
 .entretien { background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'); }
 
 /* =========================================
-   SECTION CONTACT (Épurée et Pro)
+   7. SECTION CONTACT (CORRIGÉE)
    ========================================= */
 .contact-section {
-    background-color: #111; /* Fond très sombre */
+    background-color: #0d0d0d; /* Fond presque noir */
     padding: 80px 0;
-    border-top: 1px solid #333; /* Ligne de séparation subtile */
+    border-top: 1px solid #222;
+    color: #fff; /* Texte blanc par défaut */
 }
 
 .contact-section h2 {
     font-size: 2rem;
     letter-spacing: 2px;
     margin-bottom: 50px;
-    color: #fff;
     text-align: center;
+    color: #fff;
 }
 
 .contact-info {
     display: flex;
     justify-content: center;
-    gap: 60px; /* Espace entre les colonnes */
+    gap: 40px;
     flex-wrap: wrap;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .info-item {
@@ -129,44 +319,58 @@
     min-width: 250px;
 }
 
-/* Icônes ou Titres */
 .info-item strong {
     display: block;
-    color: #48cae4; /* Bleu Cyan */
+    color: var(--light-blue);
     font-size: 0.9rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .info-item p, .info-item a {
     font-size: 1.1rem;
-    color: #ccc;
-    font-weight: 300;
-    transition: color 0.3s;
+    color: #eee !important; /* Force le blanc cassé */
 }
 
-.info-item a:hover {
-    color: white;
-}
-
-/* Bouton Contact repensé */
-.contact-section .btn-submit {
+/* Bouton Contact Spécial */
+.btn-submit {
     background: transparent;
-    border: 2px solid #48cae4;
-    color: #48cae4;
+    border: 1px solid var(--light-blue);
+    color: var(--light-blue) !important;
     padding: 15px 40px;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+    border-radius: 50px;
     display: inline-block;
     margin-top: 20px;
-    border-radius: 50px; /* Bouton arrondi style "capsule" */
 }
 
-.contact-section .btn-submit:hover {
-    background: #48cae4;
-    color: #000;
-    box-shadow: 0 0 20px rgba(72, 202, 228, 0.4); /* Effet de lueur (glow) */
+.btn-submit:hover {
+    background: var(--light-blue);
+    color: #000 !important;
+    box-shadow: 0 0 15px rgba(72, 202, 228, 0.4);
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #000;
+    color: #666;
+    font-size: 0.8rem;
+    border-top: 1px solid #222;
+}
+
+/* =========================================
+   9. RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Cache le menu sur mobile pour l'instant pour éviter la casse */
+    }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero { height: 70vh; }
+    .contact-info { flex-direction: column; }
+    .btn-outline { margin-left: 0; margin-top: 10px; display: block; }
 }
