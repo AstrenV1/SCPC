@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SCPC Steve Chupe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">SCPC</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="plomberie.html">Plomberie</a></li>
+                <li><a href="chauffage.html">Chauffage</a></li>
+                <li><a href="renovation.html">Rénovation</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-sub contact-bg">
+        <div class="hero-content">
+            <h1>CONTACTEZ-NOUS</h1>
+            <p>UNE QUESTION ? UN PROJET ? NOUS VOUS RÉPONDONS DANS LES PLUS BREFS DÉLAIS.</p>
+        </div>
+    </section>
+
+    <section class="contact-container">
+        <div class="container-flex">
+            <div class="contact-details">
+                <h2>NOS COORDONNÉES</h2>
+                <div class="info-block">
+                    <strong>📍 ADRESSE</strong>
+                    <p>13 Sanguèze,<br>44330 Le Pallet</p>
+                </div>
+                <div class="info-block">
+                    <strong>📞 TÉLÉPHONE</strong>
+                    <p><a href="tel:0662245531">06 62 24 55 31</a></p>
+                </div>
+                <div class="info-block">
+                    <strong>📧 EMAIL</strong>
+                    <p><a href="mailto:stevechupe@yahoo.fr">stevechupe@yahoo.fr</a></p>
+                </div>
+                <div class="info-block">
+                    <strong>🕒 HORAIRES</strong>
+                    <p>Lundi - Vendredi : 08:00 - 18:00</p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h2>ENVOYEZ UN MESSAGE</h2>
+                <form action="https://formspree.io/f/votre-identifiant" method="POST" class="main-contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom / Entreprise</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Objet</label>
+                        <select name="subject" id="subject">
+                            <option value="plomberie">Plomberie</option>
+                            <option value="chauffage">Chauffage</option>
+                            <option value="renovation">Rénovation / Salle de bains</option>
+                            <option value="urgence">Urgence / Dépannage</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Décrivez votre besoin..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit-large">ENVOYER LE MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>©SCPC - 2026 - Steve Chupe - 13 Sanguèze, Le Pallet</p>
+    </footer>
+
+</body>
+</html>
