@@ -1,291 +1,130 @@
 /* =========================================
-   1. VARIABLES & RESET
+   10. STYLES SPÉCIFIQUES PAGES INTERNES
    ========================================= */
-:root {
-    --primary-blue: #0077b6;
-    --light-blue: #48cae4;
-    --dark-bg: #111;
-    --grey-bg: #1a1a1a;
-    --transition: 0.3s ease;
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #fff;
-    background-color: var(--dark-bg);
-}
-
-/* Force tous les liens à ne pas être bleus/violets par défaut */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-a:visited {
-    color: inherit;
-}
-
-/* =========================================
-   2. HEADER & NAVIGATION
-   ========================================= */
-header {
-    background: rgba(0, 0, 0, 0.95);
-    height: 80px;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+/* Section Principale (Détails) */
+.details-section {
+    background-color: var(--grey-bg); /* Fond gris foncé comme l'index */
+    padding: 80px 20px;
     border-bottom: 1px solid #333;
 }
 
-nav {
+.container-flex {
     display: flex;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.logo a {
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: var(--light-blue) !important;
-    text-transform: uppercase;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #fff !important;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-nav ul li a:hover, nav ul li a.active {
-    color: var(--light-blue) !important;
-}
-
-/* =========================================
-   3. HERO SECTION
-   ========================================= */
-.hero {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* Image de fond */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.hero-content h2 {
-    font-size: 1.5rem;
-    color: var(--light-blue);
-    margin-bottom: 30px;
-    letter-spacing: 3px;
-    font-weight: 300;
-}
-
-.btn-primary, .btn-outline, .btn-submit {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-    font-size: 0.9rem;
-}
-
-.btn-primary {
-    background: var(--primary-blue);
-    color: white !important;
-}
-
-.btn-primary:hover {
-    background: #023e8a;
-}
-
-.btn-outline {
-    border: 2px solid #fff;
-    background: transparent;
-    color: #fff !important;
-    margin-left: 10px;
-}
-
-.btn-outline:hover {
-    background: #fff;
-    color: #000 !important;
-}
-
-/* =========================================
-   4. SERVICES GRID (Correction liens violets)
-   ========================================= */
-.about {
-    background: #fff;
-    color: #333;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* CIBLE LES LIENS-CARTES SPÉCIFIQUEMENT */
-a.service-card {
-    display: flex !important; /* Force le mode flex pour aligner le contenu */
-    height: 350px;
-    justify-content: center;
-    align-items: flex-end;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    color: white !important; /* CRUCIAL : EMPÊCHE LE VIOLET */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.4s ease;
-}
-
-a.service-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Filtre sombre sur l'image */
-a.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
-    transition: 0.4s;
-}
-
-a.service-card:hover::before {
-    background: linear-gradient(to top, rgba(0, 119, 182, 0.8), rgba(0,0,0,0.1));
-}
-
-.card-overlay {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding-bottom: 30px;
-    width: 100%;
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.card-overlay span {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: var(--light-blue);
-}
-
-/* Images de fond */
-.plomberie { background-image: url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=600&q=80'); }
-.chauffage { background-image: url('https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=600&q=80'); }
-.renovation { background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'); }
-.entretien { background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'); }
-
-/* =========================================
-   5. CONTACT SECTION
-   ========================================= */
-.contact-section {
-    background-color: #0d0d0d;
-    padding: 80px 0;
-    color: white;
-}
-
-.contact-section h2 {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
-    text-align: center;
-    margin-bottom: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 60px; /* Espace entre texte et image */
 }
 
-.info-item p, .info-item a {
-    font-size: 1.1rem;
-    color: #eee !important;
+/* Colonne Texte */
+.text-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
 }
 
-.info-item strong {
-    display: block;
+.text-content h2 {
+    color: #fff;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--light-blue);
+    margin-bottom: 25px;
+}
+
+.text-content p {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.text-content strong {
     color: var(--light-blue);
-    margin-bottom: 5px;
 }
 
-.btn-submit {
-    background: transparent;
-    border: 1px solid var(--light-blue);
-    color: var(--light-blue) !important;
+.text-content h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.btn-submit:hover {
-    background: var(--light-blue);
-    color: #000 !important;
+.text-content h3 i {
+    color: var(--light-blue);
 }
 
-footer {
-    background: #000;
-    padding: 20px;
-    text-align: center;
+/* Liste à puces stylisée */
+.services-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.services-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: #ddd;
+}
+
+.services-list li::before {
+    content: "➤"; /* Ou une icône FontAwesome si dispo */
+    color: var(--light-blue);
+    position: absolute;
+    left: 0;
     font-size: 0.8rem;
-    color: #777;
+    top: 4px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav ul { display: none; } /* Cache le menu sur mobile */
-    .hero-content h1 { font-size: 2.2rem; }
-    .hero { height: 70vh; }
-    .contact-info { flex-direction: column; }
-    .btn-outline { margin-left: 0; margin-top: 10px; display: block; }
+/* Colonne Image */
+.image-main {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-main img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Ombre portée élégante */
+    border: 1px solid #333;
+}
+
+/* Galerie Photos */
+.gallery {
+    background-color: #000;
+    padding: 20px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 2;
 }
