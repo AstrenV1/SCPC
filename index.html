@@ -14,8 +14,13 @@
             <div class="logo">
                 <a href="index.html">SCPC</a>
             </div>
-            <ul>
-                <li><a href="index.html" class="active">Accueil</a></li>
+    
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="plomberie.html">Plomberie</a></li>
                 <li><a href="chauffage.html">Chauffage</a></li>
                 <li><a href="renovation.html">Rénovation</a></li>
@@ -94,9 +99,21 @@
         </div>
     </section>
 
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+
     <footer>
         <p>&copy; 2026 SCPC - Steve Chupe Plomberie et Chauffage. Tous droits réservés.</p>
     </footer>
 
 </body>
 </html>
+
