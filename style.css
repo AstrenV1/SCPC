@@ -47,6 +47,7 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #333;
+    transition: height 0.3s ease;
 }
 
 nav {
@@ -67,17 +68,17 @@ nav {
     text-transform: uppercase;
 }
 
-/* Menu */
-nav ul {
+/* Menu PC (sera caché sur mobile) */
+.nav-links {
     display: flex;
     list-style: none;
 }
 
-nav ul li {
+.nav-links li {
     margin-left: 20px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: #fff !important;
     text-transform: uppercase;
     font-size: 0.85rem;
@@ -85,7 +86,7 @@ nav ul li a {
     transition: var(--transition);
 }
 
-nav ul li a:hover, nav ul li a.active {
+.nav-links li a:hover, .nav-links li a.active {
     color: var(--light-blue) !important;
     border-bottom: 2px solid var(--light-blue);
     padding-bottom: 5px;
@@ -146,7 +147,7 @@ nav ul li a:hover, nav ul li a.active {
     letter-spacing: 2px;
 }
 
-/* Images de fond spécifiques */
+/* Images de fond spécifiques (Vos liens mis à jour) */
 .plomberie-bg { 
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.freepik.com/photos-gratuite/services-reparation-plomberie_181624-27146.jpg?semt=ais_hybrid&w=740&q=80'); 
     background-size: cover; background-position: center; 
@@ -299,7 +300,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 /* =========================================
-   6. GRILLE SERVICES (Index) - CORRIGÉ
+   6. GRILLE SERVICES (Index)
    ========================================= */
 .services-grid {
     display: grid;
@@ -374,7 +375,7 @@ a.service-card:hover::before {
     color: var(--light-blue);
 }
 
-/* Images cartes (Index) */
+/* Images cartes (Index) - Vos liens mis à jour */
 .plomberie { background-image: url('https://img.freepik.com/photos-gratuite/services-reparation-plomberie_181624-27146.jpg?semt=ais_hybrid&w=740&q=80'); }
 .chauffage { background-image: url('https://www.cti-concept.fr/contents/media/installation-chauffage-comfobox.jpg'); }
 .renovation { background-image: url('https://cdn.prod.website-files.com/64a85451f3cdf38ec7b60853/64c18ebe374da681f799bc79_Renover-une-salle-de-bain.jpg'); }
@@ -460,15 +461,78 @@ footer {
 }
 
 /* =========================================
-   9. RESPONSIVE (MOBILE)
+   9. RESPONSIVE (MOBILE & MENU BURGER)
    ========================================= */
+
+/* Par défaut (PC), on cache le bouton burger */
+.menu-toggle {
+    display: none;
+}
+
+/* --- VERSION MOBILE (Ecrans < 768px) --- */
 @media (max-width: 768px) {
-    nav ul { display: none; } /* Menu caché sur mobile */
+    
+    /* 1. On réduit la hauteur du header pour gagner de la place */
+    header {
+        height: 60px; /* Plus petit que les 80px du PC */
+    }
+
+    /* On ajuste le padding des sections pour qu'elles ne soient pas cachées sous le header */
+    .hero-sub, .hero {
+        padding-top: 60px; 
+        height: 60vh; /* Un peu plus petit sur mobile */
+    }
+
     .hero-content h1 { font-size: 2.2rem; }
-    .hero { height: 60vh; }
+    
     .container-flex { flex-direction: column; }
     .contact-info { flex-direction: column; }
     .btn-outline { display: block; margin-left: 0; margin-top: 10px; }
+
+    /* 2. On affiche le bouton "Burger" à droite */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--light-blue); /* Couleur bleue pour être bien visible */
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        right: 20px; /* Calé à droite */
+        top: 50%;
+        transform: translateY(-50%); /* Centré verticalement */
+    }
+
+    /* 3. On transforme la liste des liens en menu déroulant */
+    .nav-links {
+        display: none; /* Caché par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Juste en dessous du header de 60px */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95); /* Fond noir opaque */
+        border-bottom: 1px solid #333;
+        padding: 0;
+    }
+
+    /* Quand on clique, le JS ajoute cette classe pour afficher le menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Style des liens dans le menu mobile */
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #222;
+    }
+    
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        font-size: 1rem;
+        width: 100%;
+    }
 }
-
-
