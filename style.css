@@ -146,22 +146,22 @@ nav {
     letter-spacing: 2px;
 }
 
-/* Images de fond spécifiques (Vos liens mis à jour) */
-.plomberie-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.freepik.com/photos-gratuite/services-reparation-plomberie_181624-27146.jpg?semt=ais_hybrid&w=740&q=80'); 
-    background-size: cover; background-position: center; 
+/* Images cartes (Index) */
+.plomberie { 
+    background-image: url('https://img.freepik.com/photos-gratuite/services-reparation-plomberie_181624-27146.jpg?semt=ais_hybrid&w=740&q=80'); 
 }
-.chauffage-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.cti-concept.fr/contents/media/installation-chauffage-comfobox.jpg'); 
-    background-size: cover; 
+
+.chauffage { 
+    background-image: url('https://www.cti-concept.fr/contents/media/installation-chauffage-comfobox.jpg'); 
 }
-.renovation-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://cdn.prod.website-files.com/64a85451f3cdf38ec7b60853/64c18ebe374da681f799bc79_Renover-une-salle-de-bain.jpg'); 
-    background-size: cover; 
+
+.renovation { 
+    background-image: url('https://cdn.prod.website-files.com/64a85451f3cdf38ec7b60853/64c18ebe374da681f799bc79_Renover-une-salle-de-bain.jpg'); 
 }
-.entretien-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://gsmplumbing.com.au/wp-content/uploads/bb-plugin/cache/Depositphotos_207274982_l-2015-1024x682-landscape-1cae64cc572dc89f45767a286027047c-601cdb3faee63.jpg'); 
-    background-size: cover; 
+
+/* C'est celle-ci qui doit changer : */
+.entretien { 
+    background-image: url('https://gsmplumbing.com.au/wp-content/uploads/bb-plugin/cache/Depositphotos_207274982_l-2015-1024x682-landscape-1cae64cc572dc89f45767a286027047c-601cdb3faee63.jpg'); 
 }
 .contact-bg { 
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://palluetfreres.fr/wp-content/uploads/2022/12/entretien_chaudiere.jpg'); 
@@ -560,4 +560,5 @@ footer {
         width: 100%;
     }
 }
+
 
