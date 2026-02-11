@@ -160,7 +160,7 @@ nav {
     background-size: cover; 
 }
 .entretien-bg { 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80'); 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://gsmplumbing.com.au/wp-content/uploads/bb-plugin/cache/Depositphotos_207274982_l-2015-1024x682-landscape-1cae64cc572dc89f45767a286027047c-601cdb3faee63.jpg'); 
     background-size: cover; 
 }
 .contact-bg { 
@@ -560,3 +560,4 @@ footer {
         width: 100%;
     }
 }
+
