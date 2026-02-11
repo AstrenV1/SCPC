@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCPC - Steve Chupe Plomberie et Chauffage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -14,13 +14,13 @@
             <div class="logo">
                 <a href="index.html">SCPC</a>
             </div>
-    
+            
             <button class="menu-toggle" aria-label="Ouvrir le menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-    
+            
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="plomberie.html">Plomberie</a></li>
                 <li><a href="chauffage.html">Chauffage</a></li>
                 <li><a href="renovation.html">Rénovation</a></li>
@@ -93,11 +93,14 @@
                     <p><a href="mailto:stevechupe@yahoo.fr">stevechupe@yahoo.fr</a></p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="contact.html" class="btn-submit">NOUS ENVOYER UN MESSAGE</a>
-            </div>
+            
+            <a href="contact.html" class="btn-submit">NOUS ENVOYER UN MESSAGE</a>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2026 SCPC - Steve Chupe Plomberie et Chauffage. Tous droits réservés.</p>
+    </footer>
 
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
@@ -110,10 +113,5 @@
         }
     </script>
 
-    <footer>
-        <p>&copy; 2026 SCPC - Steve Chupe Plomberie et Chauffage. Tous droits réservés.</p>
-    </footer>
-
 </body>
 </html>
-
